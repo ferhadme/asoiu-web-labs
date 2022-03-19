@@ -1,2 +1,2 @@
 # ASOIU Web Labs Source code
-[https://ferhadme.github.io/asoiu-web-labs](Visit website for tasks)
+[Visit website for tasks](https://ferhadme.github.io/asoiu-web-labs)
