@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    font-family: Helvetica;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+    color: white;
+}
+
+.navbar h2 {
+    font-weight: normal;
+    margin-left: 1em;
+}
+
+.navbar h2 a {
+    font-size: 1.5em;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover {
+    color: red;
+    transition: .6s all;
+}
+
+.main-section {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.main-section img {
+    width: 40em;
+    height: 20em;
+}
+
+.prog-lang-list h3 {
+    text-align: center;
+}
+
+.empl-table {
+    margin-top: 1em;
+}
+
+.empl-table table, th, td {
+    border: 1px solid;
+}
+
+.empl-form {
+    margin-top: 1em;
+    margin-left: 1em;
+}

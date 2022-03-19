@@ -1,0 +1,123 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+
+.header {
+    background-color: aqua;
+    padding: 10px 20px;
+    display: flex;
+}
+
+.logo {
+    padding: 10px 10px;
+    flex-grow: 4;
+}
+
+.navbar li{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.header h1 {
+    text-align: center;
+    margin: 0px;
+}
+
+.left-side {
+    grid-area: left-side;
+    margin-left: 40px;
+}
+
+.events {
+    grid-area: events;
+}
+
+.right-side-top {
+    grid-area: right-side-top;
+}
+
+.right-side-bottom {
+    grid-area: right-side-bottom;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+	"left-side events right-side-top"
+	"left-side events right-side-bottom";
+    grid-gap: .75em;
+    margin-top: 75px;
+}
+
+.page-main {
+    grid-area: page-main;
+}
+
+.container-sm {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+	"left-side page-main"
+	"left-side page-main";
+    grid-gap: .75em;
+    margin-top: 75px;
+}
+
+.events li {
+    list-style-type: none;
+    padding: 10px 20px;
+}
+
+.proj-circle {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    border: 3px solid red;
+}
+
+.proj-circle span {
+    position: relative;
+    top: 85px;
+    left: 75px;
+}
+
+.info span {
+    display: block;
+    padding: 20px 0;
+}
+
+.page-main form input {
+    margin-bottom: 20px;
+}
+
+.page-main form .submit-container {
+    text-align: center;
+}
+
+.profile {
+    display: flex;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+}
+
+.taken-courses span {
+    display: block;
+}
+
+.skills span {
+    display: block;
+}
