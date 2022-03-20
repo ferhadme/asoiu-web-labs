@@ -23,6 +23,9 @@ function load(e) {
 
 function createBackground(bgs, maxWidthMq) {
     if (maxWidthMq.matches) {
+	for (let bg of bgs) {
+	    bg.textContent = "";
+	}
 	return;
     }
     for (let bg of bgs) {
