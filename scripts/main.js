@@ -11,16 +11,6 @@ let hexnums = [
     "99", "91", "92", "93", "94", "95", "96", "97", "98", "99", "9A", "9B", "9C", "9D", "9E", "9F",
 ];
 
-document.addEventListener('DOMContentLoaded', load);
-
-function load(e) {
-    let bgs = document.querySelectorAll('.info-background');
-    let maxWidthMq = window.matchMedia("(max-width: 1000px)");
-    setInterval(() => {
-        createBackground(bgs, maxWidthMq);
-    }, 100);
-}
-
 function createBackground(bgs, maxWidthMq) {
     if (maxWidthMq.matches) {
 	for (let bg of bgs) {
@@ -39,3 +29,24 @@ function createBackground(bgs, maxWidthMq) {
 	}
     }
 }
+
+let bgs = document.querySelectorAll('.info-background');
+let maxWidthMq = window.matchMedia("(max-width: 1000px)");
+setInterval(() => {
+    createBackground(bgs, maxWidthMq);
+}, 100);
+
+let not_ready_lab_links = document.querySelectorAll('.not-ready-lab-links');
+not_ready_lab_links.forEach(link => {
+    link.addEventListener('click', event => {
+	console.log(link);
+	if (!link.classList.contains('warning-active')) {
+	    let notReadyWarningSpan = document.createElement("span");
+	    notReadyWarningSpan.textContent = 'Not Ready yet!';
+	    notReadyWarningSpan.style.color = 'red';
+	    notReadyWarningSpan.style.marginLeft = '20px';
+	    link.parentElement.appendChild(notReadyWarningSpan);
+	    link.classList.add('warning-active');
+	}
+    });
+});
