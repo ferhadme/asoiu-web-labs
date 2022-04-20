@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            let multipleChoice = [
+                {
+                    'question': 'What is the approximate ratio of people to sheep in New Zealand?',
+                    'answers': [
+                        '6 people per 1 sheep', '3 people per 1 sheep', '1 person per 1 sheep', '1 person per 3 sheep', '1 person per 6 sheep'
+                    ],
+                    'correct': '3 people per 1 sheep'
+                }
+            ];
+
+            let freeResponse = [
+                {
+                    'question': 'In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?',
+                    'correct': 'USA'
+                }
+            ];
+
+            document.addEventListener('DOMContentLoaded', function() {
+                let part1Qs = document.querySelector('#part-1-qs');
+                for (let entity of multipleChoice) {
+                    let entityContainer = document.createElement('div');
+                    let questionHeader = document.createElement('h3');
+                    questionHeader.textContent = entity.question;
+                    entityContainer.append(questionHeader);
+
+                    let answersContainer = document.createElement('div');
+                    for (let answer of entity.answers) {
+                        let answerEl = document.createElement('button');
+                        answerEl.textContent = answer;
+
+                        answerEl.onclick = function() {
+                            let result = document.createElement('span');
+                            if (answerEl.textContent === entity.correct) {
+                                answerEl.style.background = 'green';
+                                result.textContent = 'Correct';
+                            } else {
+                                answerEl.style.background = 'red';
+                                result.textContent = 'Incorrect';
+                            }
+                            entityContainer.append(result);
+                        };
+
+                        answersContainer.append(answerEl);
+                    }
+                    entityContainer.append(answersContainer);
+                    part1Qs.append(entityContainer);
+                }
+
+                let part2Qs = document.querySelector('#part-2-qs');
+                for (let entity of freeResponse) {
+                    let entityContainer = document.createElement('div');
+                    let questionHeader = document.createElement('h3');
+                    questionHeader.textContent = entity.question;
+                    entityContainer.append(questionHeader);
+
+                    let answer = document.createElement('input');
+                    answer.type = 'text';
+                    let submit = document.createElement('button');
+                    submit.textContent = 'Check Answer';
+                    entityContainer.append(answer);
+                    entityContainer.append(submit);
+
+                    submit.onclick = function() {
+                        let result = document.createElement('span');
+                        result.style.display = 'block';
+                        if (answer.value.trim() === entity.correct) {
+                            answer.style.background = 'green';
+                            result.textContent = 'Correct';
+                        } else {
+                            answer.style.background = 'red';
+                            result.textContent = 'Incorrect';
+                        }
+                        entityContainer.append(result);
+                        submit.onclick = null;
+                    }
+                    part2Qs.append(entityContainer);
+                }
+            });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+
+                <div id="part-1-qs">
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+
+                <div id="part-2-qs">
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>
