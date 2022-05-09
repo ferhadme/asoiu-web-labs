@@ -48,8 +48,8 @@ button, input[type="submit"] {
     text-align: center;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     vertical-align: middle;
+    margin-right: 10px;
 }
-
 
 input[type="text"] {
     line-height: 1.8;
